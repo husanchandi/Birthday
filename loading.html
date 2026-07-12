@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loading Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+height:100vh;
+background:#ffffff;
+
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+}
+
+/* Floating Emojis */
+
+.emoji{
+
+position:absolute;
+font-size:28px;
+animation:float 12s linear infinite;
+opacity:.75;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(110vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+}
+
+}
+
+/* Center Box */
+
+.container{
+
+text-align:center;
+z-index:10;
+
+}
+
+.title{
+
+font-family:'Dancing Script',cursive;
+font-size:45px;
+color:#c2185b;
+
+margin-bottom:20px;
+
+}
+
+.cake{
+
+font-size:70px;
+
+animation:bounce 1.2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.loading{
+
+margin-top:20px;
+
+font-size:22px;
+
+color:#444;
+
+}
+
+.bar{
+
+width:350px;
+height:14px;
+
+background:#ddd;
+
+border-radius:30px;
+
+margin:30px auto;
+
+overflow:hidden;
+
+}
+
+.progress{
+
+width:0%;
+height:100%;
+
+background:linear-gradient(90deg,#8e24aa,#d81b60);
+
+animation:load 5s linear forwards;
+
+}
+
+@keyframes load{
+
+from{
+
+width:0%;
+
+}
+
+to{
+
+width:100%;
+
+}
+
+}
+
+.text{
+
+margin-top:15px;
+
+font-size:17px;
+
+color:#777;
+
+letter-spacing:1px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+Hey Sis! 🎉
+</div>
+
+<div class="cake">
+🎂
+</div>
+
+<div class="loading">
+Loading your birthday surprise...
+</div>
+
+<div class="bar">
+
+<div class="progress"></div>
+
+</div>
+
+<div class="text">
+Please wait...
+</div>
+
+</div>
+
+<script>
+
+/* Redirect */
+
+setTimeout(()=>{
+
+window.location.href="birthday.html";
+
+},5000);
+
+</script>
+
+</body>
+</html>

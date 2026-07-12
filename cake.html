@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Birthday Cake</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#8b1e2d;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+font-family:Arial,sans-serif;
+
+overflow:hidden;
+
+}
+
+h1{
+
+color:white;
+margin-bottom:40px;
+font-size:45px;
+
+}
+
+/* Cake */
+
+.cake{
+
+position:relative;
+
+width:250px;
+height:180px;
+
+}
+
+.layer1{
+
+width:250px;
+height:70px;
+
+background:#f6b26b;
+
+border-radius:15px;
+
+position:absolute;
+bottom:0;
+
+}
+
+.layer2{
+
+width:180px;
+height:55px;
+
+background:#ff9999;
+
+position:absolute;
+
+left:35px;
+bottom:70px;
+
+border-radius:15px;
+
+}
+
+.layer3{
+
+width:120px;
+height:45px;
+
+background:#fff2cc;
+
+position:absolute;
+
+left:65px;
+bottom:125px;
+
+border-radius:15px;
+
+}
+
+/* Candles */
+
+.candle{
+
+width:12px;
+height:45px;
+background:white;
+
+position:absolute;
+
+top:-38px;
+
+}
+
+.c1{left:20px;}
+.c2{left:54px;}
+.c3{left:88px;}
+
+.flame{
+
+width:12px;
+height:18px;
+
+background:orange;
+
+border-radius:50%;
+
+position:absolute;
+
+top:-18px;
+
+animation:flicker .4s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.2);
+
+}
+
+}
+
+button{
+
+margin-top:70px;
+
+padding:15px 40px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:white;
+
+color:#8b1e2d;
+
+font-weight:bold;
+
+}
+
+#wish{
+
+margin-top:30px;
+
+font-size:28px;
+
+color:white;
+
+display:none;
+
+}
+
+.balloon{
+
+position:absolute;
+font-size:70px;
+
+animation:up 6s linear infinite;
+
+}
+
+.left{
+
+left:40px;
+
+}
+
+.right{
+
+right:40px;
+
+}
+
+@keyframes up{
+
+0%{
+
+transform:translateY(100vh);
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="balloon left">🎈</div>
+<div class="balloon right">🎈</div>
+
+<h1>🎂 Happy Birthday Bai 🎂</h1>
+
+<div class="cake">
+
+<div class="layer1"></div>
+
+<div class="layer2"></div>
+
+<div class="layer3">
+
+<div class="candle c1">
+<div class="flame"></div>
+</div>
+
+<div class="candle c2">
+<div class="flame"></div>
+</div>
+
+<div class="candle c3">
+<div class="flame"></div>
+</div>
+
+</div>
+
+</div>
+
+<button onclick="blow()">
+
+🕯️ Blow the Candles
+
+</button>
+
+<div id="wish">
+
+✨ Make A Wish! ✨
+
+</div>
+
+<script>
+
+function blow(){
+
+document.querySelectorAll(".flame").forEach(f=>{
+
+f.style.display="none";
+
+});
+
+document.getElementById("wish").style.display="block";
+
+setTimeout(function(){
+
+window.location="final.html";
+
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>

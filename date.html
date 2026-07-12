@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Date</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#8b1e2d,#c0392b);
+
+overflow:hidden;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+color:white;
+
+}
+
+/* Date */
+
+.date{
+
+font-size:90px;
+font-weight:bold;
+letter-spacing:8px;
+animation:zoom 2s infinite alternate;
+
+text-shadow:0 0 20px rgba(255,255,255,.35);
+
+z-index:5;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.9);
+
+}
+
+to{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* Heading */
+
+h2{
+
+margin-top:20px;
+
+font-size:30px;
+
+font-weight:400;
+
+letter-spacing:3px;
+
+animation:fade 2s infinite;
+
+}
+
+@keyframes fade{
+
+0%,100%{
+
+opacity:.4;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* Firework */
+
+.firework{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+animation:explode 2s infinite;
+
+}
+
+@keyframes explode{
+
+0%{
+
+transform:scale(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(25);
+
+opacity:0;
+
+}
+
+}
+
+/* Floating Confetti */
+
+.confetti{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+background:white;
+
+animation:fall linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-100px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(720deg);
+
+}
+
+}
+
+.footer{
+
+position:absolute;
+
+bottom:40px;
+
+font-size:18px;
+
+letter-spacing:2px;
+
+opacity:.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="date">
+15 / 07 / 2005
+</div>
+
+<h2>🎉 Happy Birthday Moto 🎉</h2>
+
+<div class="footer">
+Loading Birthday Surprise...
+</div>
+
+<script>
+
+// Auto Next Page
+
+setTimeout(()=>{
+
+window.location="loading.html";
+
+},6000);
+
+
+// Confetti
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDuration=(3+Math.random()*5)+"s";
+
+c.style.animationDelay=Math.random()*5+"s";
+
+c.style.background=["#fff","#ffd700","#ffb6c1","#ff69b4","#ffe4e1"][Math.floor(Math.random()*5)];
+
+document.body.appendChild(c);
+
+}
+
+
+// Fireworks
+
+function createFirework(){
+
+let fire=document.createElement("div");
+
+fire.className="firework";
+
+fire.style.left=Math.random()*100+"vw";
+
+fire.style.top=Math.random()*100+"vh";
+
+fire.style.background=["#FFD700","#FF69B4","#00FFFF","#FFFFFF","#FFA500"][Math.floor(Math.random()*5)];
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},2000);
+
+}
+
+setInterval(createFirework,300);
+
+</script>
+
+</body>
+</html>

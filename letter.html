@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Birthday Letter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#a42b2b;
+
+font-family:Poppins,sans-serif;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.container{
+
+width:1200px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+gap:30px;
+
+}
+
+/* Letter */
+
+.paper{
+
+width:520px;
+
+background:#fff1cf;
+
+padding:40px;
+
+position:relative;
+
+box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+}
+
+/* Zig Zag */
+
+.paper:before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:-15px;
+
+width:100%;
+height:15px;
+
+background:
+linear-gradient(-45deg,#fff1cf 8px,transparent 0),
+linear-gradient(45deg,#fff1cf 8px,transparent 0);
+
+background-size:16px 16px;
+
+}
+
+.paper:after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-15px;
+
+width:100%;
+height:15px;
+
+background:
+linear-gradient(-45deg,#fff1cf 8px,transparent 0),
+linear-gradient(45deg,#fff1cf 8px,transparent 0);
+
+background-size:16px 16px;
+
+transform:rotate(180deg);
+
+}
+
+.small{
+
+text-align:center;
+
+font-weight:bold;
+
+letter-spacing:3px;
+
+font-size:18px;
+
+}
+
+.title{
+
+font-family:'Dancing Script',cursive;
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.paper p{
+
+font-size:15px;
+
+line-height:30px;
+
+color:#444;
+
+margin-bottom:15px;
+
+}
+
+.sign{
+
+font-family:'Dancing Script',cursive;
+
+font-size:34px;
+
+text-align:right;
+
+margin-top:25px;
+
+}
+
+/* Photo Section */
+
+.gallery{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.photo{
+
+width:320px;
+
+height:180px;
+
+background:#fff;
+
+padding:6px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+
+transition:.4s;
+
+}
+
+.photo:hover{
+
+transform:scale(1.04);
+
+}
+
+.photo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.next{
+
+margin-top:20px;
+
+text-align:center;
+
+font-size:18px;
+
+}
+
+.next a{
+
+text-decoration:none;
+
+color:white;
+
+background:#8d2020;
+
+padding:12px 28px;
+
+border-radius:40px;
+
+transition:.4s;
+
+}
+
+.next a:hover{
+
+background:#701414;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="paper">
+
+<div class="small">HAPPY</div>
+
+<div class="title">Birthday Bai ❤️</div>
+
+<p>
+
+My Dearest Sister,
+
+</p>
+
+<p>
+
+Today is the most special day because it is your birthday.
+Thank you for always supporting me, caring for me,
+and making every moment beautiful.
+
+</p>
+
+<p>
+
+May Waheguru Ji bless you with happiness,
+good health, success and endless smiles.
+
+</p>
+
+<p>
+
+You deserve every happiness in this world.
+No matter what happens,
+I'll always be there for you.
+
+</p>
+
+<p>
+
+Happy Birthday once again.
+Keep smiling forever.
+
+</p>
+
+<div class="sign">
+
+Love You ❤️
+
+</div>
+
+</div>
+
+<div class="gallery">
+
+<div class="photo">
+
+<img src="Images\1.JPG">
+
+</div>
+
+<div class="photo">
+
+<img src="Images\2.JPG">
+
+</div>
+
+<div class="photo">
+
+<img src="Images/3.jpg">
+
+</div>
+
+<div class="next">
+
+<a href="gallery.html">
+
+Next 😁→
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

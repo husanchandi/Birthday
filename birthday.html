@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Letter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#7d0a18,#b22222);
+font-family:Poppins,sans-serif;
+overflow:hidden;
+}
+
+/* Floating Hearts */
+
+body::before{
+content:"❤️  💖  ❤️  💕";
+position:absolute;
+font-size:25px;
+width:100%;
+height:100%;
+animation:float 18s linear infinite;
+opacity:.2;
+white-space:pre-wrap;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-120vh);}
+}
+
+.card{
+
+width:420px;
+height:560px;
+
+background:#fff8ef;
+
+border-radius:12px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding-top:40px;
+
+position:relative;
+
+}
+
+/* Title */
+
+.title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:48px;
+
+color:#9a1d28;
+
+line-height:1.2;
+
+text-align:center;
+
+}
+
+.title span{
+
+display:block;
+
+}
+
+/* Envelope */
+
+.envelope{
+
+margin-top:60px;
+
+width:230px;
+
+height:150px;
+
+background:#9e1d2b;
+
+position:relative;
+
+box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Flaps */
+
+.envelope:before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+border-left:115px solid transparent;
+border-right:115px solid transparent;
+border-top:75px solid #b63a46;
+
+}
+
+.envelope:after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+border-left:115px solid transparent;
+border-right:115px solid transparent;
+border-bottom:75px solid #7d0a18;
+
+}
+
+/* Seal */
+
+.seal{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:65px;
+height:65px;
+
+background:gold;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+
+z-index:10;
+
+transition:.3s;
+
+}
+
+.seal:hover{
+
+transform:translate(-50%,-50%) scale(1.15);
+
+}
+
+.text{
+
+margin-top:40px;
+
+color:#999;
+
+font-size:14px;
+
+letter-spacing:1px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="title">
+<span>Happy Birthday</span>
+<span>Bai ❤️</span>
+</div>
+
+<div class="envelope" onclick="nextPage()">
+
+<div class="seal">
+🔑
+</div>
+
+</div>
+
+<div class="text">
+Click the golden seal to open your surprise
+</div>
+
+</div>
+
+<script>
+
+function nextPage(){
+
+document.querySelector(".card").style.transform="scale(.9)";
+document.querySelector(".card").style.opacity=".5";
+
+setTimeout(function(){
+
+window.location.href="hero.html";
+
+},800);
+
+}
+
+</script>
+
+</body>
+</html>

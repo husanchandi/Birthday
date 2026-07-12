@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bai ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:linear-gradient(135deg,#7d001f,#d6336c);
+
+font-family:Poppins,sans-serif;
+
+overflow:hidden;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Fireworks */
+
+.firework{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+animation:explode 1.8s infinite;
+
+}
+
+@keyframes explode{
+
+0%{
+
+transform:scale(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(28);
+
+opacity:0;
+
+}
+
+}
+
+/* Balloons */
+
+.balloon{
+
+position:absolute;
+
+font-size:70px;
+
+animation:float 12s linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(120vh);
+
+}
+
+100%{
+
+transform:translateY(-150vh);
+
+}
+
+}
+
+/* Main */
+
+.container{
+
+text-align:center;
+
+color:white;
+
+z-index:100;
+
+}
+
+h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:85px;
+
+text-shadow:0 0 25px white;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 15px white;
+
+}
+
+to{
+
+text-shadow:0 0 40px gold;
+
+}
+
+}
+
+.subtitle{
+
+font-size:25px;
+
+margin-top:10px;
+
+letter-spacing:3px;
+
+}
+
+.slideshow{
+
+margin:35px auto;
+
+width:320px;
+
+height:400px;
+
+background:white;
+
+padding:10px;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.slideshow img{
+
+width:100%;
+
+height:100%;
+
+border-radius:15px;
+
+object-fit:cover;
+
+}
+
+.message{
+
+max-width:800px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:36px;
+
+padding:0 20px;
+
+}
+
+.cake{
+
+font-size:65px;
+
+margin:20px;
+
+animation:bounce 1.2s infinite;
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+.footer{
+
+margin-top:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#fff6b5;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="balloon" style="left:5%">🎈</div>
+<div class="balloon" style="left:20%;animation-duration:10s;">🎈</div>
+<div class="balloon" style="left:80%;animation-duration:13s;">🎈</div>
+<div class="balloon" style="left:92%;animation-duration:9s;">🎈</div>
+
+<div class="container">
+
+<h1>Happy Birthday Bai ❤️</h1>
+
+<div class="subtitle">
+
+</div>
+
+<div class="cake">
+
+🎂
+
+</div>
+
+<div class="slideshow">
+
+<img id="photo" src="Images\Slide9.JPG">
+
+</div>
+
+<div class="message">
+
+Thank you so much bai for being the most wonderful sister anyone could ever ask for.
+
+I pray that Waheguru Ji always keeps you smiling, healthy and successful.
+
+May every dream you have come true and every year of your life be filled with love, happiness and unforgettable memories.
+
+Enjoy your special day! ❤️🎉
+
+</div>
+
+<div class="footer">
+
+Made with ❤️ by Your Brother
+
+</div>
+
+</div>
+
+<script>
+
+/* Slideshow */
+
+const photos=[
+
+"Images/Slide1.JPG",
+"Images/Slide2.JPG",
+"Images/Slide4.JPG",    
+"Images/Slide5.JPG",
+"Images/Slide6.JPG", 
+"Images/Slide7.JPG", 
+"Images/Slide8.JPG", 
+"Images/Slide10.JPG", 
+"Images/Slide11.JPG"
+];
+
+let i=0;
+
+setInterval(()=>{
+
+i=(i+1)%photos.length;
+
+document.getElementById("photo").src=photos[i];
+
+},2500);
+
+/* Fireworks */
+
+function fire(){
+
+let f=document.createElement("div");
+
+f.className="firework";
+
+f.style.left=Math.random()*100+"vw";
+
+f.style.top=Math.random()*100+"vh";
+
+f.style.background=["#FFD700","#FF69B4","#00FFFF","#FFFFFF","#FFA500","#7CFC00"][Math.floor(Math.random()*6)];
+
+document.body.appendChild(f);
+
+setTimeout(()=>{
+
+f.remove();
+
+},1800);
+
+}
+
+setInterval(fire,250);
+
+</script>
+
+</body>
+</html>
